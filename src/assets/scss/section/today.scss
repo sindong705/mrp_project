@@ -1,0 +1,91 @@
+.today_inner {
+    display: flex;
+    background-color: var(--black100);
+    margin-bottom: 3.125rem;
+}
+
+.today_thumb {
+    width: 40%;
+}
+
+.today_text {
+    width: 60%;
+    padding: 2rem;
+
+    .today {
+        background-color: #1ed760;
+        padding: 2px 50px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        @include line-one;
+    }
+    .desc {
+        margin-bottom: 1rem;
+        color: var(--white200);
+        @include line(4)
+    }
+        
+    .info {
+        .author {
+            font-size: 1rem;
+            margin-right: 10px;
+            font-weight: 900;
+            text-decoration: underline;
+            text-underline-position: under;
+            text-transform: uppercase;
+        }
+        .date {
+            font-style: 0.8rem;
+            color: var(--white200);
+        }
+    }
+} 
+
+@media (max-width: 1700px){
+    .today_inner {
+        .today_thumb {
+            width: 500px;
+        }
+        .today_text {
+            width: calc(100% - 500px);
+
+            .desc {
+                @include line(2);
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .today_inner {
+        flex-direction: column;
+
+        .today_thumb {
+            width: 100%;
+        }
+        .today_text {
+            width: 100%;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .desc {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    #todayPage,
+    #today {
+        margin-top: 80px;
+    }
+}
